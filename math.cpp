@@ -1,7 +1,7 @@
-#define INTEGER int
-
-INTEGER Multiply(INTEGER a, INTEGER b)
+#if 1 //(or if true)
+int Multiply(int a, int b)
 {
-	INTEGER result = a * b;
+	int result = a * b;
 	return result;
 }
+#endif

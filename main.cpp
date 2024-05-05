@@ -5,33 +5,35 @@ class  Entity
 public:
 	float X, Y;
 
-	Entity()
+	void Move(float xa, float ya)
 	{
-		X = 0.0f;
-		Y = 0.0f;
-
-		std::cout << "Created Entity!" << std::endl;
-	}
-	void Print()
-	{
-		std::cout << X << ", " << Y << std::endl;
-	}
-	~Entity()
-	{
-		std::cout << "Destroyed Entity!" << std::endl;
+		X += xa;
+		Y += ya;
 	}
 };
 
 
-void Function()
+class Player : public Entity
 {
-	Entity e;
-	e.Print();
-}
+public:
+	const char* Name;
+
+	void PrintName()
+	{
+		std::cout << Name << std::endl;
+	}
+};
 
 
 int main()
 {
-	Entity e;
-	e.Print();
+	std::cout << sizeof(Entity) << std::endl;
+	std::cout << sizeof(Player) << std::endl;
+
+	Player player;
+	player.Move(5, 5);
+	player.X = 2;
+	player.Y = 3;
+	player.Name = "Player";
+	player.PrintName();
 }

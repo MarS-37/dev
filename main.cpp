@@ -1,46 +1,37 @@
 #include <iostream>
 
-class  Log
+class  Entity
 {
 public:
-	enum Level
-	{
-		LevelError = 0, LevelWarning, LevelInfo
-	};
+	float X, Y;
 
-public:
-	void SetLevel(int level)
+	Entity()
 	{
-		m_LogLevel = level;
-	}
-	void Error(const char* message)
-	{
-		if (m_LogLevel >= LevelError) {
-			std::cout << "[ERROR]: " << message << std::endl;
-		}			
-	}
-	void Warning(const char* message)
-	{
-		if (m_LogLevel >= LevelWarning) {
-			std::cout << "[WARNING]: " << message << std::endl;
-		}		
-	}
-	void Info(const char* message)
-	{
-		if (m_LogLevel >= LevelInfo) {
-			std::cout << "[INFO]: " << message << std::endl;
-		}		
-	}
+		X = 0.0f;
+		Y = 0.0f;
 
-private:
-	int m_LogLevel = LevelInfo;
+		std::cout << "Created Entity!" << std::endl;
+	}
+	void Print()
+	{
+		std::cout << X << ", " << Y << std::endl;
+	}
+	~Entity()
+	{
+		std::cout << "Destroyed Entity!" << std::endl;
+	}
 };
+
+
+void Function()
+{
+	Entity e;
+	e.Print();
+}
+
 
 int main()
 {
-	Log log;
-	log.SetLevel(log.LevelError);
-	log.Error("Error messages");
-	log.Warning("Warning messages");
-	log.Info("Info messages");
+	Entity e;
+	e.Print();
 }

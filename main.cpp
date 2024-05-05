@@ -2,31 +2,27 @@
 
 struct Entity
 {
-	static int x, y;
-
-	void Print()
-	{
-		std::cout << x << ", " << y << std::endl;
-	}
+	int x, y;	
 };
 
 
-int Entity::x;
-int Entity::y;
+static void Print(Entity e)
+{
+	std::cout << e.x << ", " << e.y << std::endl;
+}
 
 
 int main()
 {
 	Entity e;
-	Entity::x = 2;
-	Entity::y = 3;
-	e.Print();
+	e.x = 2;
+	e.y = 3;
+	Print(e);
 
 	Entity e1;
-	Entity::x = 5;
-	Entity::y = 8;
-	e1.Print();
+	e1.x = 5;
+	e1.y = 8;
 
-	e.Print();
-	e1.Print();
+	Print(e);
+	Print(e1);
 }

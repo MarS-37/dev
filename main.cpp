@@ -1,19 +1,20 @@
 #include <iostream>
 
 
-int main()
+class Entity
 {
+public:
 	int example[5];
 
-	for (int i = 0; i < 5; ++i)
-		example[i] = 2;
+	Entity()
+	{
+		for (int i = 0; i < 5; ++i)
+			example[i] = 2;
+	}
+};
 
-	
 
-	int* another = new int[5];
-
-	for (int i = 0; i < 5; ++i)
-		another[i] = 2;
-
-	delete[] another;
+int main()
+{
+	Entity e;
 }

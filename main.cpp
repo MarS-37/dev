@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 
 
 class Entity
@@ -7,12 +8,11 @@ public:
 	static const int exampleSize = 5;
 	int example[exampleSize];
 
+	std::array<int, 5> another;
+
 	Entity()
 	{
-		int a[5];
-		int count = sizeof(a) / sizeof(int);
-
-		for (int i = 0; i < 5; ++i)
+		for (int i = 0; another.size(); ++i)
 			example[i] = 2;
 	}
 };

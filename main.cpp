@@ -4,7 +4,8 @@
 class Entity
 {
 public:
-	int* example = new int[5];
+	static const int exampleSize = 5;
+	int example[exampleSize];
 
 	Entity()
 	{

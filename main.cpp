@@ -20,7 +20,7 @@ public:
 };
 
 
-class Player : public Entity
+class Player : Entity
 {
 public:
 	Player()

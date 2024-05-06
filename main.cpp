@@ -4,7 +4,7 @@
 class Entity
 {
 public:
-	int example[5];
+	int* example = new int[5];
 
 	Entity()
 	{

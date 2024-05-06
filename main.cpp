@@ -10,5 +10,5 @@ int main()
 		example[i] = 2;
 
 	example[2] = 5;
-	*(ptr + 2) = 6;
+	*(int*)((char*)ptr + 2) = 6;
 }

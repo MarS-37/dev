@@ -1,39 +1,14 @@
 #include <iostream>
-#include <string>
-
-
-class Entity
-{
-//private:
-//protected:
-public:
-	int X, Y;
-
-	void Print();
-
-public:
-	Entity() 
-	{
-		X = 0;
-		Print();
-	}
-};
-
-
-class Player : Entity
-{
-public:
-	Player()
-	{
-		X = 2;
-		Print();
-	}
-};
 
 
 int main()
 {
-	Entity e;
-	e.Print();
-	e.X = 3;
+	int example[5];
+	int* ptr = example;
+
+	for (int i = 0; i < 5; ++i)
+		example[i] = 2;
+
+	example[2] = 5;
+	*(ptr + 2) = 6;
 }

@@ -1,12 +1,19 @@
 #include <iostream>
+#include <string>
+
+
+void PrintString(std::string& string)
+{
+	std::cout << string << std::endl;
+}
 
 int main()
 {
-	const char* name = "Cherno";
-	char name2[6] = { 'C', 'h', 'e', 'r', 'n', 'o' };
-	char name3[7] = { 'C', 'h', 'e', 'r', 'n', 'o', 0}; // or '\0' or NULL
+	std::string name = std::string("Cherno") + " hello";
+	bool contains = name.find("no_") != std::string::npos;
+
+	PrintString(name);
 
 	std::cout << name << std::endl;
-	std::cout << name2 << std::endl;
-	std::cout << name3 << std::endl;
+	std::cout << contains << std::endl;
 }

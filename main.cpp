@@ -30,7 +30,4 @@ int main()
 	const char* example2 = "Line1\n"
 		"Line2\n"
 		"Line3\n";
-
-
-	//std::cout << (L)name3 << std::endl;
 }

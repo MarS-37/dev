@@ -12,9 +12,11 @@ private:
 public:
 	int GetX() const
 	{
-		m_X = 2; // error
-
 		return m_X;
+	}
+	void SetX(int x) const
+	{
+		m_X = x; // error
 	}
 };
 

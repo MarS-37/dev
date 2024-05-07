@@ -8,7 +8,7 @@ public:
 	static const int exampleSize = 5;
 	int example[exampleSize];
 
-	std::array<int, 5> another;
+	std::array<int, 5> another{ 1, 2, 3, 4, 5 };
 
 	Entity()
 	{

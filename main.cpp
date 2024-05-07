@@ -7,10 +7,10 @@
 class Entity
 {
 private:
-	int m_X;
+	int* m_X;
 
 public:
-	int GetX() const
+	const int* const GetX() const
 	{
 		return m_X;
 	}

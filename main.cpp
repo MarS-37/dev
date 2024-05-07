@@ -3,31 +3,55 @@
 
 #include <stdlib.h>
 
+
+class Entity
+{
+private:
+	int m_X;
+
+public:
+	int GetX() const
+	{
+		m_X = 2; // error
+
+		return m_X;
+	}
+};
+
+
 int main()
 {
-	using namespace std::string_literals;
+	const int MAX_AGE = 90;
 
 
-	std::string name0 = std::string("Cherno") + " hello";
+	const int* a = new int;
 
-	std::string name1 = "Cherno"s + " hello"; // C++14
-	std::string name2 = u8"Cherno"s + " hello"; // C++14
-	std::wstring name3 = L"Cherno"s + L" hello"; // C++14
-	std::u32string name4 = U"Cherno"s + U" hello"; // C++14
-
-	const char* name5 = u8"Cherno";
-	const wchar_t* name6 = L"Cherno";
+	*a = 2;		// error
+	a = (int*)&MAX_AGE;
 
 
-	const char16_t* name7 = u"Cherno";
-	const char32_t* name8 = U"Cherno";
+	int* const b = new int;
 
-	const char* example1 = R"(Line1
-		Line2
-		Line3
-		Line4)";
+	*b = 2;
+	b = (int*)&MAX_AGE; // error
+		
 
-	const char* example2 = "Line1\n"
-		"Line2\n"
-		"Line3\n";
+	int const* c = new int;
+
+	*c = 2;		// error
+	c = (int*)&MAX_AGE;
+
+
+	const int* const d = new int;
+
+	*d = 2;		// error
+	d = (int*)&MAX_AGE; // error
+
+
+	std::cout << *a << std::endl;
+
+	delete a;
+	delete b;
+	delete c;
+	delete d;
 }

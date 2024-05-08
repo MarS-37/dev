@@ -6,13 +6,12 @@ class Entity
 {
 private:
 	std::string m_Name;
-	mutable int n_DebugCount = 0;
+	int m_Score;
 
 public:
 	Entity()
-	{
-		m_Name = "Unknown";
-	}
+		: m_Name("Unknown"), m_Score(0)
+	{}
 	Entity(const std::string& name)
 	{
 		m_Name = name;

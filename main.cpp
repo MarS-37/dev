@@ -23,10 +23,10 @@ private:
 	Example m_Example;
 
 public:
-	Entity()		
+	Entity()
+		: m_Example(Example(8))
 	{
-		m_Name = std::string("Unknown");
-		m_Example = Example(8);
+		m_Name = std::string("Unknown");		
 	}
 	Entity(const std::string& name)
 		: m_Name(name)

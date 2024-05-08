@@ -13,8 +13,8 @@ public:
 		: m_Score(0), m_Name("Unknown")
 	{}
 	Entity(const std::string& name)
-	{
-		m_Name = name;
+		: m_Name(name)
+	{		
 	}
 	const std::string& GetName() const
 	{

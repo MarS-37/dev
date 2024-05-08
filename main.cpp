@@ -10,7 +10,7 @@ private:
 
 public:
 	Entity()
-		: m_Name("Unknown"), m_Score(0)
+		: m_Score(0), m_Name("Unknown")
 	{}
 	Entity(const std::string& name)
 	{

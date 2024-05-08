@@ -24,7 +24,7 @@ private:
 
 public:
 	Entity()
-		: m_Example(Example(8))
+		: m_Example(8)
 	{
 		m_Name = std::string("Unknown");		
 	}

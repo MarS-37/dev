@@ -9,9 +9,16 @@ private:
 	mutable int n_DebugCount = 0;
 
 public:
+	Entity()
+	{
+		m_Name = "Unknown";
+	}
+	Entity(const std::string& name)
+	{
+		m_Name = name;
+	}
 	const std::string& GetName() const
 	{
-		m_DebugCount++;
 		return m_Name;
 	}
 };
@@ -19,6 +26,9 @@ public:
 
 int main()
 {
-	const Entity e;
-	e.GetName();
+	Entity e0;
+	std::cout << e0.GetName() << std::endl;
+
+	Entity e1("Cherno");
+	std::cout << e1.GetName() << std::endl;
 }

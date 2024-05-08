@@ -6,10 +6,12 @@ class Entity
 {
 private:
 	std::string m_Name;
+	mutable int n_DebugCount = 0;
 
 public:
 	const std::string& GetName() const
 	{
+		m_DebugCount++;
 		return m_Name;
 	}
 };

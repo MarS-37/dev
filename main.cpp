@@ -2,35 +2,31 @@
 #include <string>
 
 
-using String = std::string;
-
-
 class Entity
 {
 public:
-	Entity()
-		: m_Name("Unknown") {}
-	Entity(const String& name)
-		: m_Name(name) {}
-
-	const String& GetName() const { return m_Name; }
+	Entity(const std::string& name)
+		: m_Name("Unknown"), m_Age(-1) {}
+	Entity(int age)
+		: m_Name("Unknown"), m_Age(age) {}
 
 private:
-	String m_Name;
+	std::string m_Name;
+	int m_Age;
 };
+
+
+void PrintEntity(const Entity& entity)
+{
+	// remaining code
+}
 
 
 int main()
 {
-	int a = 2;
+	PrintEntity(22);
+	PrintEntity(std::string("Cherno")); // or PrintEntity(Entity("Cherno"));
 
-	int* b = new int[50];
-	Entity* e = new(b) Entity();
-	
-	// Entity* e = (Entity*)malloc(sizeof(Entity));
-
-	delete[] b;
-	delete e;
-
-	// free(e);
+	Entity a("Cherno"); // or a = Entity("Cherno"); or a = "Cherno";
+	Entity b(22); // or b = Entity(22); or b = 22;
 }

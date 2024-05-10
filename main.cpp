@@ -22,15 +22,15 @@ private:
 
 int main()
 {
-	Entity* e;
+	int a = 2;
 
-	{
-		Entity* entity = new Entity("Cherno");
+	int* b = new int[50];
+	Entity* e = new Entity[50]; 
+	
+	// Entity* e = (Entity*)malloc(sizeof(Entity));
 
-		e = entity;
+	delete[] b;
+	delete[] e;
 
-		std::cout << entity->GetName() << std::endl; // or (*entity).GetName()
-	}
-
-	delete e;
+	// free(e);
 }

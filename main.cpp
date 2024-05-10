@@ -25,7 +25,7 @@ int main()
 	int a = 2;
 
 	int* b = new int[50];
-	Entity* e = new Entity();
+	Entity* e = new(b) Entity();
 	
 	// Entity* e = (Entity*)malloc(sizeof(Entity));
 

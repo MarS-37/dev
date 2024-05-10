@@ -2,44 +2,12 @@
 #include <string>
 
 
-class Example
-{
-public:
-	Example()
-	{
-		std::cout << "Create Entity!" << std::endl;
-	}
-	Example(int x)
-	{
-		std::cout << "Create Entity with " << x << "!" << std::endl;
-	}
-};
-
-
-class Entity
-{
-private:
-	std::string m_Name;
-	Example m_Example;
-
-public:
-	Entity()
-		: m_Example(8)
-	{
-		m_Name = std::string("Unknown");		
-	}
-	Entity(const std::string& name)
-		: m_Name(name)
-	{		
-	}
-	const std::string& GetName() const
-	{
-		return m_Name;
-	}
-};
+static int s_Level = 1;
+static int s_Speed = 2;
 
 
 int main()
 {
-	Entity e0;
+	s_Speed = s_Level > 5 ? 10 : 5;
+	std::cout << s_Speed << std::endl;
 }

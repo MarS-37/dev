@@ -25,10 +25,12 @@ int main()
 	Entity* e;
 
 	{
-		Entity entity("Cherno");
+		Entity* entity = new Entity("Cherno");
 
-		e = &entity;
+		e = entity;
 
-		std::cout << entity.GetName() << std::endl;
+		std::cout << entity->GetName() << std::endl; // or (*entity).GetName()
+
+		delete entity;
 	}
 }

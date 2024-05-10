@@ -30,7 +30,7 @@ int main()
 		e = entity;
 
 		std::cout << entity->GetName() << std::endl; // or (*entity).GetName()
-
-		delete entity;
 	}
+
+	delete e;
 }

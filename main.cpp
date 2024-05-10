@@ -25,12 +25,12 @@ int main()
 	int a = 2;
 
 	int* b = new int[50];
-	Entity* e = new Entity[50]; 
+	Entity* e = new Entity();
 	
 	// Entity* e = (Entity*)malloc(sizeof(Entity));
 
 	delete[] b;
-	delete[] e;
+	delete e;
 
 	// free(e);
 }

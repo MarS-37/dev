@@ -22,7 +22,13 @@ private:
 
 int main()
 {
-	Entity entity("Cherno");
+	Entity* e;
 
-	std::cout << entity.GetName() << std::endl;
+	{
+		Entity entity("Cherno");
+
+		e = &entity;
+
+		std::cout << entity.GetName() << std::endl;
+	}
 }

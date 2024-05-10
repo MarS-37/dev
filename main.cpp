@@ -2,13 +2,27 @@
 #include <string>
 
 
-static int s_Level = 1;
-static int s_Speed = 2;
+using String = std::string;
+
+
+class Entity
+{
+public:
+	Entity()
+		: m_Name("Unknown") {}
+	Entity(const String& name)
+		: m_Name(name) {}
+
+	const String& GetName() const { return m_Name; }
+
+private:
+	String m_Name;
+};
 
 
 int main()
 {
-	s_Speed = s_Level > 5 ? s_Level > 10 ? 15 : 10 : 5;
-	
-	std::cout << s_Speed << std::endl;
+	Entity entity;
+
+	std::cout << entity.GetName() << std::endl;
 }

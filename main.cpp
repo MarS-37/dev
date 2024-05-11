@@ -33,6 +33,6 @@ void PrintEntity(Entity* e)
 int main()
 {
 	{
-		Entity e;
+		Entity* e = new Entity;
 	}
 }

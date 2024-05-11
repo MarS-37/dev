@@ -1,7 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                       SMART POINTERS in C++						 |
-//|        (std::unique_ptr, std::shared_ptr, std::weak_ptr)         |
+//|                   Copying and Copy Constructors                  |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -9,34 +8,21 @@
 #include <iostream>
 #include <string>
 
-#include <memory>
 
-
-class Entity
+struct Vector2
 {
-public:
-	Entity()
-	{
-		std::cout << "Create Entity!" << std::endl;
-	}
-
-	~Entity()
-	{
-		std::cout << "Destroyed Entity!" << std::endl;
-	}
-
-	void Print(){}
+	float x, y;
 };
-
 
 int main()
 {
-	{
-		std::shared_ptr<Entity> e0;
-		{
-			std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
-			std::weak_ptr<Entity> weakEntity = sharedEntity;
-			e0 = sharedEntity;
-		}
-	}
+	Vector2* a = new Vector2({ 2, 3 });
+
+	std::cout << a->x << ", " << a->y << std::endl;
+
+	Vector2* b = a;
+	b->x = 20;
+	b->y = 30;
+
+	std::cout << a->x << ", " << a->y << std::endl;
 }

@@ -29,6 +29,11 @@ public:
 		delete[] m_Buffer;
 	}
 
+	char& operator[](unsigned int index)
+	{
+		return m_Buffer[index];
+	}
+
 	friend std::ostream& operator<<(std::ostream& stream, const String& string);
 };
 
@@ -43,5 +48,10 @@ std::ostream& operator<<(std::ostream& stream, const String& string)
 int main()
 {
 	String string = "Cherno";
+	String second = string;
+
+	second[2] = 'a';
+
 	std::cout << string << std::endl;
+	std::cout << second << std::endl;
 }

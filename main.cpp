@@ -24,10 +24,7 @@ public:
 		m_Buffer[m_Size] = 0;
 	}
 
-	String(const String& other)
-	{
-		memcpy(this, &other, sizeof(String));
-	}
+	String(const String& other) = delete;
 
 	~String()
 	{

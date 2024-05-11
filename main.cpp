@@ -24,6 +24,11 @@ public:
 		m_Buffer[m_Size] = 0;
 	}
 
+	~String()
+	{
+		delete[] m_Buffer;
+	}
+
 	friend std::ostream& operator<<(std::ostream& stream, const String& string);
 };
 

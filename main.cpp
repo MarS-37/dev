@@ -30,6 +30,11 @@ struct Vector2
 	{
 		return Vector2(x * other.x, y * other.y);
 	}
+
+	Vector2 operator*(const Vector2& other) const
+	{
+		return Multiply(other);
+	}
 };
 
 
@@ -40,5 +45,5 @@ int main()
 	Vector2 powerup(1.1f, 1.1f);
 
 	Vector2 result1 = position.Add(speed.Multiply(powerup));
-	Vector2 result2 = position + speed; // * powerup));
+	Vector2 result2 = position + speed * powerup;
 }

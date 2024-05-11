@@ -27,6 +27,7 @@ public:
 	String(const String& other)
 		: m_Size(other.m_Size)
 	{
+		std::cout << "Copied String!\n";
 		m_Buffer = new char[m_Size + 1];
 		memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
 	}

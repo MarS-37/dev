@@ -1,12 +1,15 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|          Object Lifetime in C++ (Stack/Scope Lifetimes)          |
+//|                       SMART POINTERS in C++						 |
+//|        (std::unique_ptr, std::shared_ptr, std::weak_ptr)         |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
 #include <string>
+
+#include <memory>
 
 
 class Entity
@@ -21,28 +24,16 @@ public:
 	{
 		std::cout << "Destroyed Entity!" << std::endl;
 	}
-};
 
-
-class ScopedPtr
-{
-public:
-	ScopedPtr(Entity* ptr)
-		: m_Ptr(ptr) {}
-
-	~ScopedPtr()
-	{
-		delete m_Ptr;
-	}
-
-private:
-	Entity* m_Ptr;
+	void Print(){}
 };
 
 
 int main()
 {
 	{
-		ScopedPtr e = new Entity(); // or ScopedPtr e(new Entity()); Entity* e = new Entity();
+		std::unique_ptr<Entity> entity(new Entity());
+
+		entity->Print();
 	}
 }

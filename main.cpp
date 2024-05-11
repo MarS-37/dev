@@ -38,6 +38,13 @@ struct Vector2
 };
 
 
+std::ostream& operator<<(std::ostream& stream, Vector2& other)
+{
+	std::cout << other.x << ", " << other.y << std::endl;
+	return stream;
+}
+
+
 int main()
 {
 	Vector2 position(4.0f, 4.0f);
@@ -46,4 +53,6 @@ int main()
 
 	Vector2 result1 = position.Add(speed.Multiply(powerup));
 	Vector2 result2 = position + speed * powerup;
+
+	std::cout << result2 << std::endl;
 }

@@ -9,20 +9,33 @@
 #include <string>
 
 
-struct Vector2
+class String
 {
-	float x, y;
+private:
+	char* m_Buffer;
+	unsigned int m_Size;
+
+public:
+	String(const char* string)
+	{
+		m_Size = strlen(string);
+		m_Buffer = new char[m_Size];
+		memcpy(m_Buffer, string, m_Size);
+	}
+
+	friend std::ostream& operator<<(std::ostream& stream, const String& string);
 };
+
+
+std::ostream& operator<<(std::ostream& stream, const String& string)
+{
+	stream << string.m_Buffer;
+	return stream;
+}
+
 
 int main()
 {
-	Vector2* a = new Vector2({ 2, 3 });
-
-	std::cout << a->x << ", " << a->y << std::endl;
-
-	Vector2* b = a;
-	b->x = 20;
-	b->y = 30;
-
-	std::cout << a->x << ", " << a->y << std::endl;
+	String string = "Cherno";
+	std::cout << string << std::endl;
 }

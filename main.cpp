@@ -33,6 +33,7 @@ int main()
 {
 	{
 		std::unique_ptr<Entity> entity = std::make_unique<Entity>();
+		std::shared_ptr<Entity> sharedEntity = std::make_unique<Entity>();
 
 		entity->Print();
 	}

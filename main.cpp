@@ -1,29 +1,38 @@
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|             OPERATORS and OPERATOR OVERLOADING in C++            |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+
 #include <iostream>
 #include <string>
 
 
-class Entity
+struct Vector2
 {
-public:
-	explicit Entity(const std::string& name)
-		: m_Name("Unknown"), m_Age(-1) {}
-	explicit Entity(int age)
-		: m_Name("Unknown"), m_Age(age) {}
+	float x, y;
 
-private:
-	std::string m_Name;
-	int m_Age;
+	Vector2(float x, y)
+		: x(x), y(y) {}
+
+	Vector2 Add(const Vector2& other) const
+	{
+		return Vector2(x + other.x, y + other.y);
+	}
+
+	Vector2 Multiply(const Vector2& other) const
+	{
+		return Vector2(x * other.x, y * other.y);
+	}
 };
-
-
-void PrintEntity(const Entity& entity)
-{
-	// remaining code
-}
 
 
 int main()
 {
-	Entity a("Cherno"); // or a = Entity("Cherno"); or a = (Entity)"Cherno"; not a = "Cherno";
-	Entity b(22); // or b = Entity(22); or b = (Entity)22; not b = 22;
+	Vector2 position(4.0f, 4.0f);
+	Vector2 speed(0.5f, 1.5f);
+	Vector2 powerup(1.1f, 1.1f);
+
+	Vector2 result = position.Add(speed.Multiply(powerup));
 }

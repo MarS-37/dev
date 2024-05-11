@@ -52,6 +52,12 @@ std::ostream& operator<<(std::ostream& stream, const String& string)
 }
 
 
+void PrintString(String string)
+{
+	std::cout << string << std::endl;
+}
+
+
 int main()
 {
 	String string = "Cherno";
@@ -59,6 +65,6 @@ int main()
 
 	second[2] = 'a';
 
-	std::cout << string << std::endl;
-	std::cout << second << std::endl;
+	PrintString(string);
+	PrintString(second);
 }

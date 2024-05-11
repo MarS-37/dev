@@ -53,7 +53,7 @@ std::ostream& operator<<(std::ostream& stream, const String& string)
 }
 
 
-void PrintString(String string)
+void PrintString(const String& string)
 {
 	std::cout << string << std::endl;
 }

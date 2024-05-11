@@ -35,6 +35,7 @@ int main()
 		std::shared_ptr<Entity> e0;
 		{
 			std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
+			std::weak_ptr<Entity> weakEntity = sharedEntity;
 			e0 = sharedEntity;
 		}
 	}

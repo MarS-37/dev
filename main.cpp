@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                     The "this" keyword in C++                    |
+//|          Object Lifetime in C++ (Stack/Scope Lifetimes)          |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -9,20 +9,17 @@
 #include <string>
 
 
-void PrintEntity(const Entity& e);
-
-
 class Entity
 {
 public:
-	int X, Y;
-
-	Entity(int x, int y)
+	Entity()
 	{
-		this->X = x; // or (*this).x = x;
-		this->Y = y; // or (*this).y = y;
+		std::cout << "Create Entity!" << std::endl;
+	}
 
-		PrintEntity(*this);
+	~Entity()
+	{
+		std::cout << "Destroyed Entity!" << std::endl;
 	}
 };
 
@@ -35,7 +32,7 @@ void PrintEntity(Entity* e)
 
 int main()
 {
-	Entity e(1, 3);
-
-	std::cout << e.X << ", " << e.Y << std::endl;
+	{
+		Entity e;
+	}
 }

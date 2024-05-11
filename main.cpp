@@ -35,6 +35,16 @@ struct Vector2
 	{
 		return Multiply(other);
 	}
+
+	bool operator==(const Vector2& other) const
+	{
+		return x == other.x && other.y;
+	}
+
+	bool operator!=(const Vector2& other) const
+	{
+		return !(*this == other);
+	}
 };
 
 

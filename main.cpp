@@ -24,6 +24,9 @@ public:
 		m_Buffer[m_Size] = 0;
 	}
 
+	String(const String& other)
+		: m_Buffer(other.m_Buffer), m_Size(other.m_Size) {}
+
 	~String()
 	{
 		delete[] m_Buffer;

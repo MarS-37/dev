@@ -24,15 +24,25 @@ public:
 };
 
 
-void PrintEntity(Entity* e)
+class ScopedPtr
 {
-	// Print
-}
+public:
+	ScopedPtr(Entity* ptr)
+		: m_Ptr(ptr) {}
+
+	~ScopedPtr()
+	{
+		delete m_Ptr;
+	}
+
+private:
+	Entity* m_Ptr;
+};
 
 
 int main()
 {
 	{
-		Entity* e = new Entity;
+		ScopedPtr e = new Entity(); // or ScopedPtr e(new Entity()); Entity* e = new Entity();
 	}
 }

@@ -25,7 +25,9 @@ public:
 	}
 
 	String(const String& other)
-		: m_Buffer(other.m_Buffer), m_Size(other.m_Size) {}
+	{
+		memcpy(this, &other, sizeof(String));
+	}
 
 	~String()
 	{

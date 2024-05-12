@@ -47,4 +47,8 @@ int main()
 	vertices.push_back(Vertex(1, 2, 3));
 	vertices.push_back(Vertex(4, 5, 6));
 	vertices.push_back(Vertex(7, 8, 9));
+
+	for (Vertex v : vertices) {
+		std::cout << v << std::endl;
+	}
 }

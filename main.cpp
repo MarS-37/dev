@@ -35,7 +35,7 @@ public:
 		delete m_Obj;
 	}
 
-	Entity* GetObject()
+	Entity* operator->()
 	{
 		return m_Obj;
 	}
@@ -45,5 +45,5 @@ public:
 int main()
 {
 	ScopedPtr entity = new Entity();
-	entity.GetObject()->Print();
+	entity->Print();
 }

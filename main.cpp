@@ -12,7 +12,7 @@
 class Singleton
 {
 private:
-	static Singleton* s_Instance;
+	static Singleton& s_Instance;
 
 public: 
 	static Singleton& Get()

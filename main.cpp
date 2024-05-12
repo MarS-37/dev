@@ -17,14 +17,12 @@ private:
 public: 
 	static Singleton& Get()
 	{
-		return *s_Instance;
+		static Singleton instance;
+		return instance;
 	}
 
 	void Hello() {}
 };
-
-
-Singleton* Singleton::s_Instance = nullptr;
 
 
 int main()

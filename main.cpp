@@ -13,4 +13,5 @@
 int main()
 {
 	int a = glfwInit();
+	std::cout << "GLFW WORK!" << std::endl;
 }

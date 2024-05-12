@@ -9,19 +9,25 @@
 #include <string>
 
 
-int Function()
+class Singleton
 {
-	static int i = 0;
-	++i;
-	std::cout << i << std::endl;
+private:
+	static Singleton* s_Instance;
 
-	return i;
-}
+public: 
+	static Singleton& Get()
+	{
+		return *s_Instance;
+	}
+
+	void Hello() {}
+};
+
+
+Singleton* Singleton::s_Instance = nullptr;
 
 
 int main()
 {
-	for (auto i = 0; i < 5; ++i) {
-		Function();
-	}
+	Singleton::Get().Hello();
 }

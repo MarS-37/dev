@@ -7,11 +7,12 @@
 
 
 #include <iostream>
-#include <GLFW/glfw3.h>
+//#include <GLFW/glfw3.h>
 
+extern "C" int glfwInit();
 
 int main()
 {
 	int a = glfwInit();
-	std::cout << "GLFW WORK!" << std::endl;
+	std::cout << "GLFW WORK: " << a << std::endl;
 }

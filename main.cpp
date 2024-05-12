@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                            Operator ->                           |
+//|               Dynamic Arrays in C++ (std::vector)                |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -9,20 +9,21 @@
 #include <string>
 
 
-struct Vector3
+struct Vertex
 {
 	float x, y, z;
 };
 
 
+std::ostream& operator<<(std::ostream& stream, const Vertex& vertex)
+{
+	stream << vertex.x << ", " << vertex.y << ", " << vertex.z;
+
+	return stream;
+}
+
+
 int main()
 {
-	int offset0 = (int)&((Vector3*)nullptr)->x;
-	std::cout << "Offset: " << offset0 << std::endl;
-
-	int offset1 = (int)&((Vector3*)nullptr)->y;
-	std::cout << "Offset: " << offset1 << std::endl;
-
-	int offset2 = (int)&((Vector3*)nullptr)->z;
-	std::cout << "Offset: " << offset2 << std::endl;
+	Vertex vertices[5];
 }

@@ -25,5 +25,5 @@ std::ostream& operator<<(std::ostream& stream, const Vertex& vertex)
 
 int main()
 {
-	Vertex vertices[5];
+	Vertex* vertices = new Vertex[5];
 }

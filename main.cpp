@@ -41,6 +41,8 @@ int main()
 		std::cout << v << std::endl;
 	}
 
+	vertices.erase(vertices.begin() + 1);
+
 	for (Vertex& v : vertices) {
 		std::cout << v << std::endl;
 	}

@@ -7,12 +7,10 @@
 
 
 #include <iostream>
-#include <string>
-
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 
 int main()
 {
-	
+	int a = glfwInit();
 }

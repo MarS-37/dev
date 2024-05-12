@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 
+#include <vector>
+
 
 struct Vertex
 {
@@ -25,5 +27,5 @@ std::ostream& operator<<(std::ostream& stream, const Vertex& vertex)
 
 int main()
 {
-	Vertex* vertices = new Vertex[5];
+	std::vector<Vertex> vertices;
 }

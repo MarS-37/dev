@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                             Operator ->                          |
+//|                            Operator ->                           |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -20,6 +20,7 @@ public:
 	}
 };
 
+
 class ScopedPtr
 {
 private:
@@ -33,10 +34,16 @@ public:
 	{
 		delete m_Obj;
 	}
+
+	Entity* GetObject()
+	{
+		return m_Obj;
+	}
 };
 
 
 int main()
 {
 	ScopedPtr entity = new Entity();
+	entity.GetObject()->Print();
 }

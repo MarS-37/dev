@@ -39,11 +39,16 @@ public:
 	{
 		return m_Obj;
 	}
+
+	const Entity* operator->() const
+	{
+		return m_Obj;
+	}
 };
 
 
 int main()
 {
-	ScopedPtr entity = new Entity();
+	const ScopedPtr entity = new Entity();
 	entity->Print();
 }

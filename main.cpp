@@ -36,7 +36,12 @@ int main()
 		std::cout << vertices[i] << std::endl;
 	}
 
+	// copied
 	for (Vertex v : vertices) {
+		std::cout << v << std::endl;
+	}
+
+	for (Vertex& v : vertices) {
 		std::cout << v << std::endl;
 	}
 }

@@ -1,18 +1,17 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                      Using Dynamic Libraries                     |
+//|                 Making and Working with Libraries                |
+//|                (Multiple Projects in Visual Studio)              |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
-#include <iostream>
-#include <GLFW/glfw3.h>
+#include "../../engine/src/engine.h"
 
 
 int main()
 {
-	int a = glfwInit();
-	std::cout << "GLFW WORK: " << a << std::endl;
 
-	std::cin.get();
+	engine::PrintMessage();
+
 }

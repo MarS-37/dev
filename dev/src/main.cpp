@@ -1,7 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                 Making and Working with Libraries                |
-//|                (Multiple Projects in Visual Studio)              |
+//|             How to Deal with Multiple Return Values              |
 //|                                                                  |
 //+------------------------------------------------------------------+
 

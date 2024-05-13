@@ -6,12 +6,16 @@
 //+------------------------------------------------------------------+
 
 
-//#include "../../engine/src/engine.h"
 #include "engine.h"
+
+#include "iostream"
+
 
 int main()
 {
 
 	engine::PrintMessage();
+
+	std::cin.get();
 
 }

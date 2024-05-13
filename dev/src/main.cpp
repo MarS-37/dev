@@ -6,8 +6,8 @@
 //+------------------------------------------------------------------+
 
 
-#include "../../engine/src/engine.h"
-
+//#include "../../engine/src/engine.h"
+#include "engine.h"
 
 int main()
 {

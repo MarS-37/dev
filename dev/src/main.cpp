@@ -9,11 +9,11 @@
 #include <string>
 
 
-template<int N>
+template<typename T, int N>
 class Array
 {
 private:
-	int m_Array[N];
+	T m_Array[N];
 
 public:
 	int GetSize() const { return N; }
@@ -22,7 +22,9 @@ public:
 
 int main()
 {
-	Array<5> array;
+	Array<int, 5> array; // or Array<std::string, 50> array; or Array<float, 10> array;
+
+	std::cout << array.GetSize() << std::endl;
 
 	return 0;
 }

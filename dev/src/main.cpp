@@ -16,6 +16,8 @@ private:
 	T m_Array[N];
 
 public:
+	Array() : m_Array{} {}
+
 	int GetSize() const { return N; }
 };
 

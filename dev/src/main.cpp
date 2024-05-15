@@ -18,9 +18,9 @@ void Print(T value)
 
 int main()
 {
-	Print(5);
-	Print("Hell");
-	Print(5.5f);
+	Print<int>(5);
+	Print<std::string>("Hell");
+	Print<double>(5.5f);
 
 	return 0;
 }

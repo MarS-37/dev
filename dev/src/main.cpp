@@ -9,18 +9,20 @@
 #include <string>
 
 
-template<typename T>
-void Print(T value)
+template<int N>
+class Array
 {
-	std::cout << value << std::endl;
-}
+private:
+	int m_Array[N];
+
+public:
+	int GetSize() const { return N; }
+};
 
 
 int main()
 {
-	Print<int>(5);
-	Print<std::string>("Hell");
-	Print<double>(5.5f);
+	Array<5> array;
 
 	return 0;
 }

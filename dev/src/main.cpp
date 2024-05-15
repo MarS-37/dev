@@ -1,20 +1,26 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|             How to Deal with Multiple Return Values              |
+//|                             Templates                            |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
-#include "engine.h"
-
 #include "iostream"
+#include <string>
+
+
+template<typename T>
+void Print(T value)
+{
+	std::cout << value << std::endl;
+}
 
 
 int main()
 {
+	Print(5);
+	Print("Hell");
+	Print(5.5f);
 
-	engine::PrintMessage();
-
-	std::cin.get();
-
+	return 0;
 }

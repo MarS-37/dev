@@ -31,6 +31,7 @@ int main()
 	array[4] = 5;
 	Vector3 vector;
 
+
 	int* hvalue = new int;
 	*hvalue = 5;
 	int* harray = new int[5];
@@ -40,6 +41,10 @@ int main()
 	harray[3] = 4;
 	harray[4] = 5;
 	Vector3* hvector = new Vector3();
+
+	delete hvalue;
+	delete[] harray;
+	delete hvector;
 
 
 	return 0;

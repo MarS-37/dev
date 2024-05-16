@@ -4,9 +4,26 @@
 //|                                                                  |
 //+------------------------------------------------------------------+
 
+#include <unordered_map>
 #include <iostream>
 #include <string>
 #include <vector>
+
+
+class Device {};
+
+
+class DeviceManager
+{
+private:
+	std::unordered_map<std::string, std::vector<Device*>> m_Device;
+
+public:
+	const std::unordered_map<std::string, std::vector<Device*>>& GetDevices() const
+	{
+		return m_Device;
+	}
+};
 
 
 int main()
@@ -24,4 +41,12 @@ int main()
 	{
 		std::cout << *it << std::endl;
 	}
+
+
+	DeviceManager dm;
+	const auto& devices = dm.GetDevices();
+	// or const std::unordered_map<std::string, std::vector<Device*>>& devices = dm.GetDevices();
+
+
+	std::cin.get();
 }

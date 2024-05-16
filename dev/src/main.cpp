@@ -10,6 +10,11 @@
 #include <vector>
 
 
+auto GetName()
+{
+	return "Cherno";
+}
+
 class Device {};
 
 

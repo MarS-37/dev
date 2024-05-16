@@ -17,7 +17,9 @@
 
 int main()
 {
+	LOG("Hell");
 
 
+	std::cin.get();
 	return 0;
 }

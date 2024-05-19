@@ -36,6 +36,7 @@ namespace orange {
 
 
 using namespace apple;
+using namespace orange;
 
 int main()
 {

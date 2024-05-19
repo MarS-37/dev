@@ -1,18 +1,12 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                         Function Pointers                        |
+//|                             Lambdas                              |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
 #include <vector>
-
-
-void PrintValue(int value)
-{
-	std::cout << "Value: " << value << std::endl;
-}
 
 
 void ForEach(const std::vector<int>& values, void(*func)(int))

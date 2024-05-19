@@ -1,23 +1,25 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                           Static Arrays                          |
+//|                         Function Pointers                        |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
-#include <array>
+
+
+void Hell()
+{
+	std::cout << "meshall" << std::endl;
+}
 
 
 int main()
 {
-	std::array<int, 5> data;
-	data[0] = 2;
-	data[4] = 1;
+	auto function = Hell;
 
-
-	std::array<int, 5> dataOld;
-	dataOld[0] = 0;
+	function();
+	function();
 
 
 	std::cin.get();

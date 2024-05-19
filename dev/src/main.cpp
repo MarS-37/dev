@@ -8,19 +8,19 @@
 #include <iostream>
 
 
-void Hell()
+void Hell(int a)
 {
-	std::cout << "meshall" << std::endl;
+	std::cout << "meshall " << a << std::endl;
 }
 
 
 int main()
 {
-	typedef void(*HellFunction)();
+	typedef void(*HellFunction)(int);
 	HellFunction function = Hell;
 
-	function();
-	function();
+	function(8);
+	function(2);
 
 
 	std::cin.get();

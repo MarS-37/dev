@@ -35,13 +35,10 @@ namespace orange {
 }
 
 
-using namespace apple;
-using namespace orange;
-
 int main()
 {
 
-	print("Hell");
+	apple::print("Hell");
 
 
 #if 0

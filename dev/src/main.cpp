@@ -16,7 +16,7 @@ void Hell()
 
 int main()
 {
-	auto function = Hell;
+	auto function = Hell; // or void(*cherno)() = Hell;
 
 	function();
 	function();

@@ -1,37 +1,25 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                             Namespaces                           |
+//|                              Threads                             |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
-#include <string>
 #include <iostream>
-#include <algorithm>
+#include <thread>
 
 
-namespace apple {
-	void print(const std::string& text)
-	{
-		std::cout << text << std::endl;
-	}
-}
+void DoWork()
+{
 
-
-namespace orange {
-	void print(const char* text)
-	{
-		std::string temp = text;
-		std::reverse(temp.begin(), temp.end());
-		std::cout << temp << std::endl;
-	}
 }
 
 
 int main()
 {
-	apple::print("Hell");
+	std::thread worker(DoWork);
 
+	worker.join();
 
 	std::cin.get();
 }

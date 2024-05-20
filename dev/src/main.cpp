@@ -14,8 +14,11 @@ static bool s_Finished = false;
 
 void DoWork()
 {
+	using namespace std::literals::chrono_literals;
+
 	while (!s_Finished) {
 		std::cout << "Working...\n";
+		std::this_thread::sleep_for(1s);
 	}
 }
 
@@ -28,6 +31,7 @@ int main()
 	s_Finished = true;
 
 	worker.join();
+	std::cout << "Finished." << std::endl;
 
 	std::cin.get();
 }

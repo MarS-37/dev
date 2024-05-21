@@ -16,9 +16,7 @@ int main()
 		a2d[i] = new int[50];
 	}
 
-	a2d[0][0] = 0;
-	a2d[0][1] = 0;
-	a2d[0][2] = 0;
+	delete[] a2d;
 
 
 	std::cin.get();

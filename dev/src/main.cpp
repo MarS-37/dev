@@ -10,10 +10,11 @@
 
 int main()
 {
-	int* array = new int[50];
 	int** a2d = new int* [50];
 
-	a2d[0] = nullptr;
+	for (int i = 0; i < 50; i++) {
+		a2d[i] = new int[50];
+	}
 
 
 	std::cin.get();

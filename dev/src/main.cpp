@@ -1,42 +1,29 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                     Multidimensional Arrays                      |
+//|                              Sorting                             |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
 
 int main()
 {
-	int** a2d = new int* [5];
+	std::vector<int> values{ 3, 5, 1, 4, 2 };
+	std::sort(values.begin(), values.end());
 
-	for (int i = 0; i < 5; i++) {
-		a2d[i] = new int[5];
+	for (int value : values) {
+		std::cout << value << std::endl;
 	}
 
-	for (int y = 0; y < 5; y++) {
-		for (int x = 0; x < 5; x++) {
-			a2d[x][y] = 2;
-		}
+	// or 
+
+	for (int i = 0; i < values.size(); ++i) {
+		std::cout << i << " " << values[i] << std::endl;
 	}
-
-	for (int i = 0; i < 5; i++) {
-		delete[] a2d[i];
-	}
-
-	delete[] a2d;
-
-
-	int* array = new int[5 * 5];
-	for (int y = 0; y < 5 * 5; y++) {
-		for (int x = 0; x < 5; x++) {
-			array[x + y * 5] = 2;
-		}
-	}
-
-	delete[] array;
 
 
 	std::cin.get();

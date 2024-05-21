@@ -23,7 +23,8 @@ int main()
 		a3d[i] = new int* [50];
 
 		for (int j = 0; j < 50; j++) {
-			a3d[i][j] = new int[50];
+			int** ptr = a3d[i];
+			ptr[j] = new int[50];
 		}
 	}
 

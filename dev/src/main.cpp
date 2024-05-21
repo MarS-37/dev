@@ -28,6 +28,8 @@ int main()
 		}
 	}
 
+	a3d[0][0][0] = 0;
+
 
 	std::cin.get();
 }

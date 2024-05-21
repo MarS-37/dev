@@ -5,6 +5,7 @@
 //+------------------------------------------------------------------+
 
 
+#include <functional>
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -13,7 +14,7 @@
 int main()
 {
 	std::vector<int> values{ 3, 5, 1, 4, 2 };
-	std::sort(values.begin(), values.end());
+	std::sort(values.begin(), values.end(), std::greater<int>());
 
 	for (int value : values) {
 		std::cout << value << std::endl;

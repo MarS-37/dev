@@ -36,6 +36,8 @@ int main()
 		}
 	}
 
+	delete[] array;
+
 
 	std::cin.get();
 }

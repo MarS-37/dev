@@ -20,7 +20,9 @@ int main()
 
 	int* position = (int*)&e;
 
-	std::cout << position[0] << ", " << position[1] << std::endl;
+	int y = *(int*)((char*)&e + 4);
+
+	std::cout << position[0] << ", " << y << std::endl;
 
 
 	std::cin.get();

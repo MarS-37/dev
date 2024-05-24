@@ -40,7 +40,7 @@ int main()
 	Base* base = derived;
 
 
-	AnoherClass* ac = dynamic_cast<AnoherClass*>(ac);
+	AnoherClass* ac = static_cast<AnoherClass*>(ac);
 
 
 	std::cin.get();

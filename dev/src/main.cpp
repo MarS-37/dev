@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                              Unions                              |
+//|                        Virtual Destructors                       |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -8,43 +8,17 @@
 #include <iostream>
 
 
-struct Vector2
+class Base
 {
-	float x, y;	
+public:
+	Base() { std::cout << "Base Constructor\n"; }
+	~Base() { std::cout << "Base Destructor\n"; }
 };
-
-
-struct Vector4
-{
-	union
-	{
-		struct
-		{
-			float x, y, z, w;
-		};
-		struct
-		{
-			Vector2 a, b;
-		};
-	};
-};
-
-
-void PrintVector2(const Vector2& vector)
-{
-	std::cout << vector.x << ", " << vector.y << std::endl;
-}
 
 
 int main()
 {
-	Vector4 vector = { 1.0f, 2.0f, 3.0f, 4.0f };
-	PrintVector2(vector.a);
-	PrintVector2(vector.b);
-	vector.z = 500.0f;
-	std::cout << "-----------------------------\n";
-	PrintVector2(vector.a);
-	PrintVector2(vector.b);
+	Base b;
 
 
 	std::cin.get();

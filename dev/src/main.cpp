@@ -16,9 +16,18 @@ public:
 };
 
 
+class Derived : public Base
+{
+public:
+	Derived() { std::cout << "Derived Constructor\n"; }
+	~Derived() { std::cout << "Derived Destructor\n"; }
+};
+
+
 int main()
 {
 	Base b;
+	Derived d;
 
 
 	std::cin.get();

@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                        Virtual Destructors                       |
+//|                              Casting                             |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -34,11 +34,13 @@ public:
 
 int main()
 {
-	double value = 5.25;
-	double a = (int)value + 5.3;
+	Derived* derived = new Derived();
 
 
-	double s = static_cast<int>(value) + 5.3;
+	Base* base = derived;
+
+
+	AnoherClass* ac = dynamic_cast<AnoherClass*>(ac);
 
 
 	std::cin.get();

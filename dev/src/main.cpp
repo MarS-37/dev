@@ -1,43 +1,23 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                          Dynamic Casting                         |
+//|                            BENCHMARKING                          |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
-
-
-class Entity
-{
-public:
-	virtual void PrintName() {}
-};
-
-
-class Player : public Entity
-{
-
-};
-
-
-class Enemy : public Entity
-{
-
-};
+#include <memory>
 
 
 int main()
 {
-	Player* player = new Player();
-	Entity* actuallyEnemy = new Enemy();
-	
-	Entity* actuallyPlayer = player;
-	
-	Player* p1 = dynamic_cast<Player*>(actuallyEnemy);
+	int value = 0;
 
-	Player* p2 = dynamic_cast<Player*>(actuallyPlayer);
+	for (int i = 0; i < 1000000; ++i)
+		value += 2;
+
+	std::cout << value << std::endl;
 
 
-	std::cin.get();
+	__debugbreak();
 }

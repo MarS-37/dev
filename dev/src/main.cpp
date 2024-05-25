@@ -30,10 +30,13 @@ class Enemy : public Entity
 int main()
 {
 	Player* player = new Player();
-	Entity* e = player;
-	Entity* e1 = new Enemy();
+	Entity* actuallyEnemy = new Enemy();
+	
+	Entity* actuallyPlayer = player;
+	
+	Player* p1 = dynamic_cast<Player*>(actuallyEnemy);
 
-	Player* p = dynamic_cast<Player*>(e);
+	Player* p2 = dynamic_cast<Player*>(actuallyPlayer);
 
 
 	std::cin.get();

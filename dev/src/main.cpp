@@ -32,7 +32,7 @@ int main()
 	Entity* e = player;
 	Entity* e1 = new Enemy();
 
-	Player* p = (Player*)e1;
+	Player* p = static_cast<Player*>(e1);
 
 
 	std::cin.get();

@@ -9,6 +9,7 @@
 #include <memory>
 
 #include <chrono>
+#include <array>
 
 
 class Timer
@@ -41,16 +42,40 @@ private:
 
 int main()
 {
-	int value = 0;
-
+	struct Vector2
 	{
+		float x, y;
+	};
+
+	std::cout << "Make Shared\n";
+	{
+		std::array<std::shared_ptr<Vector2>, 1000> sharedPtrs;
+
 		Timer timer;
 
-		for (int i = 0; i < 1000000; ++i)
-			value += 2;
+		for (int i = 0; i < sharedPtrs.size(); ++i)
+			sharedPtrs[i] = std::make_shared < Vector2();
 	}
 
-	std::cout << value << std::endl;
+	std::cout << "New Shared\n";
+	{
+		std::array<std::shared_ptr<Vector2>, 1000> sharedPtrs;
+
+		Timer timer;
+
+		for (int i = 0; i < sharedPtrs.size(); ++i)
+			sharedPtrs[i] = std::shared_ptr<Vector2>(new Vector2());
+	}
+
+	std::cout << "Make Unique\n";
+	{
+		std::array<std::unique_ptr<Vector2>, 1000> sharedPtrs;
+
+		Timer timer;
+
+		for (int i = 0; i < sharedPtrs.size(); ++i)
+			sharedPtrs[i] = std::make_unique<Vector2>();
+	}
 	
 
 	__debugbreak();

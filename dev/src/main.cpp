@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                              Casting                             |
+//|                          Dynamic Casting                         |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -8,39 +8,31 @@
 #include <iostream>
 
 
-class Base
+class Entity
 {
-public:
-	Base() { }
-	virtual ~Base() { }
+	
 };
 
 
-class Derived : public Base
+class Player : public Entity
 {
-public:
-	Derived() { }
-	~Derived() { }
+
 };
 
 
-class AnoherClass : public Base
+class Enemy : public Entity
 {
-public:
-	AnoherClass() { }
-	~AnoherClass() { }
+
 };
 
 
 int main()
 {
-	Derived* derived = new Derived();
+	Player* player = new Player();
+	Entity* e = player;
+	Entity* e1 = new Enemy();
 
-
-	Base* base = derived;
-
-
-	AnoherClass* ac = static_cast<AnoherClass*>(ac);
+	Player* p = (Player*)e1;
 
 
 	std::cin.get();

@@ -18,10 +18,14 @@ std::tuple<std::string, int> CreatePerson()
 
 int main()
 {
-	 auto person = CreatePerson(); // or std::tuple<std::string, int>
+	 //auto person = CreatePerson(); // or std::tuple<std::string, int>
+	 //std::string& name = std::get<0>(person);
+	 //int age = std::get<1>(person);
 
-	 std::string& name = std::get<0>(person);
-	 int age = std::get<1>(person);
+
+	 std::string name;
+	 int age;
+	 std::tie(name, age) = CreatePerson();
 	
 
 	 std::cin.get();

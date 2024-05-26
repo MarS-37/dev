@@ -19,7 +19,7 @@ std::tuple<std::string, int> CreatePerson()
 int main()
 {
 	auto [name, age] = CreatePerson();
-	
+	std::cout << name << ", " << age << std::endl;
 
 	 std::cin.get();
 }

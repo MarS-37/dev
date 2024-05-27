@@ -1,1 +1,1 @@
-{"otherData": {},"traceEvents":[]}
+{"otherData": {},"traceEvents":[{"cat":"function","dur":1058855,"name":"void __cdecl Benchmark::PrintFunction(void)","ph":"X","pid":0,"tid":1604480574,"ts":1009220930040},{"cat":"function","dur":1161825,"name":"void __cdecl Benchmark::PrintFunction(int)","ph":"X","pid":0,"tid":2704934847,"ts":1009220930017}

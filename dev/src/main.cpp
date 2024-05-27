@@ -34,7 +34,7 @@ int main()
 	std::string lastName = name.substr(4, 9);
 
 
-	PrintName(firstName);
+	PrintName(name.substr(0, 3));
 
 
 	std::cout << s_AllocCount << " allocations " << std::endl;

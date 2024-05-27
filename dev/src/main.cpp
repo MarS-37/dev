@@ -28,6 +28,12 @@ std::optional<std::string> ReadFileAsString(const std::string& filepath)
 int main()
 {
 	std::optional<std::string> data = ReadFileAsString("data.txt");	// or auto
+
+	std::string value = data.value_or("Not present");
+
+	std::optional<int> count;
+	int c = count.value_or(100);
+
 	if (data.has_value()) {
 		std::cout << "File read successfully!\n";
 	}

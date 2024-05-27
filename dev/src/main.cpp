@@ -7,7 +7,20 @@
 
 #include <iostream>
 
+#include <optional>
 #include <variant>
+
+
+enum class ErrorCode
+{
+	None = 0, NotFound = 1, NoAccess = 2
+};
+
+
+std::variant<std::string, ErrorCode> ReadFileAsString()
+{
+	return {};
+}
 
 
 int main()

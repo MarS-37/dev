@@ -27,9 +27,13 @@ std::optional<std::string> ReadFileAsString(const std::string& filepath)
 
 int main()
 {
-	auto data = ReadFileAsString("data.txt");	// or std::optional<std::string>
+	std::optional<std::string> data = ReadFileAsString("data.txt");	// or auto
 	if (data.has_value()) {
-
+		std::cout << "File read successfully!\n";
+	}
+	else {
+		std::string& string = *data; // or data.value();
+		std::cout << "File could not be opened!\n";
 	}
 
 

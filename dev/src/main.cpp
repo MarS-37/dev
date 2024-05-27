@@ -40,6 +40,8 @@ int main()
 
 #endif
 
+	PrintName("Cherno");
+
 	PrintName(firstName);
 	PrintName(lastName);
 

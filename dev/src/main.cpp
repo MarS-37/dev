@@ -9,24 +9,27 @@
 #include <fstream>
 
 
-std::string ReadFileAsString(const std::string& filepath)
+std::string ReadFileAsString(const std::string& filepath, bool& outSuccess)
 {
 	std::ifstream stream(filepath);
 	if (stream)	{
 		std::string result;
 		// read file
-		stream.close(); // or return "";
+		stream.close();
+		outSuccess = true;
 		return result;
 	}
 
-	return std::string();
+	outSuccess = false;
+	return std::string();	// or return "";
 }
 
 
 int main()
 {
-	std::string data = ReadFileAsString("data.txt");
-	if (data != "") {
+	bool fileOpenedSuccessfully;
+	std::string data = ReadFileAsString("data.txt", fileOpenedSuccessfully);
+	if (fileOpenedSuccessfully) {
 
 	}
 

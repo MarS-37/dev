@@ -1,48 +1,22 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|            Multiple TYPES of Data in a SINGLE VARIABLE           |
+//|                       How to store ANY data                      |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
 
-#include <optional>
-#include <variant>
-
-
-enum class ErrorCode
-{
-	None = 0, NotFound = 1, NoAccess = 2
-};
-
-
-std::variant<std::string, ErrorCode> ReadFileAsString()
-{
-	return {};
-}
+#include <any>
 
 
 int main()
 {
-	std::variant<std::string, int> data;
-
-	std::cout << sizeof(int) << "\n";
-	std::cout << sizeof(std::string) << "\n";
-	std::cout << sizeof(data) << "\n";
-
-	data = "Cherno";
-	std::cout << std::get<std::string>(data) << "\n";
-	if (auto value = std::get_if<std::string>(&data)) {
-		std::string& v = *value;
-	}
-	else {
-
-	}
-
+	std::any data;
 	data = 2;
-	std::cout << std::get<int>(data) << "\n";
+	data = "Cherno";
+	data = std::string("Cherno");
 	
-	
+
 	std::cin.get();
 }

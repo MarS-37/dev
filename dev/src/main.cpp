@@ -27,7 +27,14 @@ void PrintName(const std::string& name)
 
 int main()
 {
-	PrintName("Yan Chernikov");
+	std::string name = "Yan Chernikov";
+
+
+	std::string firstName = name.substr(0, 3);
+	std::string lastName = name.substr(4, 9);
+
+
+	PrintName(firstName);
 
 
 	std::cout << s_AllocCount << " allocations " << std::endl;

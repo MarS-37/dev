@@ -174,6 +174,9 @@ namespace Benchmark {
 		std::cout << "RunBenchmarks...\n";
 		std::thread a([]() { PrintFunction(2); });
 		std::thread b([]() { PrintFunction(); });
+
+		a.join();
+		b.join();
 	}
 }
 

@@ -19,7 +19,7 @@ void* operator new(size_t size)
 }
 
 
-void PrintName(std::string_view name)
+void PrintName(const std::string& name)
 {
 	std::cout << name << std::endl;
 }
@@ -42,8 +42,8 @@ int main()
 
 	PrintName("Cherno");
 
-	PrintName(firstName);
-	PrintName(lastName);
+	//PrintName(firstName);
+	//PrintName(lastName);
 
 
 	std::cout << s_AllocCount << " allocations " << std::endl;

@@ -18,6 +18,7 @@ void* operator new(size_t size)
 	return malloc(size);
 }
 
+#define STRING_VIEW 1
 #if STRING_VIEW
 void PrintName(std::string_view name)
 {

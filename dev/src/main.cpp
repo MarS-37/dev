@@ -16,13 +16,18 @@ void* operator new(size_t size)
 }
 
 
+struct CustomClass
+{
+	std::string s0, s1;
+};
+
+
 int main()
 {
 	std::any data;
 	data = 2;
-	data = "Cherno";
-	data = std::string("Cherno");
-	std::string& string = std::any_cast<std::string&>(data);
+	data = CustomClass();
+	//std::string& string = std::any_cast<std::string&>(data);
 
 
 	std::cin.get();

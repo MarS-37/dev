@@ -36,11 +36,12 @@ int main()
 #else
 
 	std::string_view firstName(name.c_str(), 3);
-	std::string_view lastName(name.c_str() + 4, 3);
+	std::string_view lastName(name.c_str() + 4, 9);
 
 #endif
 
 	PrintName(firstName);
+	PrintName(lastName);
 
 
 	std::cout << s_AllocCount << " allocations " << std::endl;

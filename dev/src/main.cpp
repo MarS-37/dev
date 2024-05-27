@@ -13,6 +13,11 @@
 int main()
 {
 	std::variant<std::string, int> data;
+
+	std::cout << sizeof(int) << "\n";
+	std::cout << sizeof(std::string) << "\n";
+	std::cout << sizeof(data) << "\n";
+
 	data = "Cherno";
 	std::cout << std::get<std::string>(data) << "\n";
 	if (auto value = std::get_if<std::string>(&data)) {

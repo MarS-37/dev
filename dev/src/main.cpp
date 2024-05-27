@@ -1,25 +1,35 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                         STRUCTURED BINDINGS                      |
+//|                  How to Deal with OPTIONAL Data                  |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
-#include <string>
-#include <tuple>
+#include <fstream>
 
 
-std::tuple<std::string, int> CreatePerson()
+std::string ReadFileAsString(const std::string& filepath)
 {
-	return{ "Cherno", 24 };
+	std::ifstream stream(filepath);
+	if (stream)	{
+		std::string result;
+		// read file
+		stream.close(); // or return "";
+		return result;
+	}
+
+	return std::string();
 }
 
 
 int main()
 {
-	auto [name, age] = CreatePerson();
-	std::cout << name << ", " << age << std::endl;
+	std::string data = ReadFileAsString("data.txt");
+	if (data != "") {
 
-	 std::cin.get();
+	}
+
+
+	std::cin.get();
 }

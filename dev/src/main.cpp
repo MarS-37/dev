@@ -10,6 +10,12 @@
 #include <any>
 
 
+void* operator new(size_t size)
+{
+	return malloc(size);
+}
+
+
 int main()
 {
 	std::any data;

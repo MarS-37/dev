@@ -141,7 +141,7 @@ private:
 #define PROFILE_SCOPE(name)
 #endif
 
-void Function1()
+void PrintFunction(int value)
 {
 	PROFILE_SCOPE();
 
@@ -151,7 +151,7 @@ void Function1()
 }
 
 
-void Function2()
+void PrintFunction()
 {
 	PROFILE_SCOPE();
 
@@ -167,16 +167,15 @@ void RunBenchmarks()
 
 
 	std::cout << "RunBenchmarks...\n";
-	Function1();
-	Function2();
+	PrintFunction(2);
+	PrintFunction();
 }
 
 
 int main()
 {
 	Instrumentor::Get().BeginSession("Profile");
-	Function1();
-	Function2();
+	RunBenchmarks();
 	Instrumentor::Get().EndSession();
 
 

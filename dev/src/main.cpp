@@ -136,7 +136,7 @@ private:
 #define PROFILING 1
 #if PROFILING
 #define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name);
-#define PROFILE_FUNCTION() PROFILE_SCOPE(__FUNCTION__)
+#define PROFILE_FUNCTION() PROFILE_SCOPE(__FUNCSIG__)
 #else
 #define PROFILE_SCOPE(name)
 #endif

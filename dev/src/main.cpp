@@ -27,8 +27,7 @@ void PrintName(const std::string& name)
 
 int main()
 {
-	std::string name = "Yan Chernikov";
-	PrintName(name);
+	PrintName("Yan Chernikov");
 
 
 	std::cout << s_AllocCount << " allocations " << std::endl;

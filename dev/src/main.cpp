@@ -27,7 +27,7 @@ void PrintName(std::string_view name)
 
 int main()
 {
-	std::string name = "Yan Chernikov";
+	const char* name = "Yan Chernikov";
 
 #if 0
 	std::string firstName = name.substr(0, 3);
@@ -35,8 +35,8 @@ int main()
 
 #else
 
-	std::string_view firstName(name.c_str(), 3);
-	std::string_view lastName(name.c_str() + 4, 9);
+	std::string_view firstName(name, 3);
+	std::string_view lastName(name + 4, 9);
 
 #endif
 

@@ -32,7 +32,6 @@ int main()
 		std::cout << "File read successfully!\n";
 	}
 	else {
-		std::string& string = *data; // or data.value();
 		std::cout << "File could not be opened!\n";
 	}
 

@@ -1,33 +1,37 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                       How to store ANY data                      |
+//|                  How to make your STRINGS FASTER                 |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
+#include <string>
 
-#include <any>
 
+static uint32_t s_AllocCount = 0;
 
 void* operator new(size_t size)
 {
+	s_AllocCount++;
+	std::cout << "Allocating " << size << " bytes\n";
 	return malloc(size);
 }
 
 
-struct CustomClass
+void PrintName(const std::string& name)
 {
-	std::string s0, s1;
-};
+	std::cout << name << std::endl;
+}
 
 
 int main()
 {
-	std::any data;
-	data = 2;
-	data = CustomClass();
-	//std::string& string = std::any_cast<std::string&>(data);
+	std::string name = "Yan Chernikov";
+	PrintName(name);
+
+
+	std::cout << s_AllocCount << " allocations " << std::endl;
 
 
 	std::cin.get();

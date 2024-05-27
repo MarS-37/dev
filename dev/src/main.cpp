@@ -29,10 +29,16 @@ int main()
 {
 	std::string name = "Yan Chernikov";
 
-
+#if 0
 	std::string firstName = name.substr(0, 3);
 	std::string lastName = name.substr(4, 9);
 
+#else
+
+	std::string_view firstName(name.c_str(), 3);
+	std::string_view lastName(name.c_str() + 4, 3);
+
+#endif
 
 	PrintName(name.substr(0, 3));
 

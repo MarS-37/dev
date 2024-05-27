@@ -133,9 +133,17 @@ private:
 };
 
 
+#define PROFILING 1
+#if PROFILING
+#define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name);
+#define PROFILE_FUNCTION() PROFILE_SCOPE(__FUNCTION__)
+#else
+#define PROFILE_SCOPE(name)
+#endif
+
 void Function1()
 {
-	InstrumentationTimer timer("Function1");
+	PROFILE_SCOPE();
 
 	for (int i = 0; i < 1000; ++i) {
 		std::cout << "Hello World # " << i << std::endl;
@@ -145,7 +153,7 @@ void Function1()
 
 void Function2()
 {
-	InstrumentationTimer timer("Function2");
+	PROFILE_SCOPE();
 
 	for (int i = 0; i < 1000; ++i) {
 		std::cout << "Hello World # " << sqrt(i) << std::endl;
@@ -155,7 +163,7 @@ void Function2()
 
 void RunBenchmarks()
 {
-	InstrumentationTimer timer("RunBenchmarks");
+	PROFILE_SCOPE();
 
 
 	std::cout << "RunBenchmarks...\n";

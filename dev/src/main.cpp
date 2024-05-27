@@ -141,41 +141,44 @@ private:
 #define PROFILE_SCOPE(name)
 #endif
 
-void PrintFunction(int value)
-{
-	PROFILE_SCOPE();
 
-	for (int i = 0; i < 1000; ++i) {
-		std::cout << "Hello World # " << i << std::endl;
+namespace Benchmark {
+	void PrintFunction(int value)
+	{
+		PROFILE_SCOPE();
+
+		for (int i = 0; i < 1000; ++i) {
+			std::cout << "Hello World # " << i << std::endl;
+		}
 	}
-}
 
 
-void PrintFunction()
-{
-	PROFILE_SCOPE();
+	void PrintFunction()
+	{
+		PROFILE_SCOPE();
 
-	for (int i = 0; i < 1000; ++i) {
-		std::cout << "Hello World # " << sqrt(i) << std::endl;
+		for (int i = 0; i < 1000; ++i) {
+			std::cout << "Hello World # " << sqrt(i) << std::endl;
+		}
 	}
-}
 
 
-void RunBenchmarks()
-{
-	PROFILE_SCOPE();
+	void RunBenchmarks()
+	{
+		PROFILE_SCOPE();
 
 
-	std::cout << "RunBenchmarks...\n";
-	PrintFunction(2);
-	PrintFunction();
+		std::cout << "RunBenchmarks...\n";
+		PrintFunction(2);
+		PrintFunction();
+	}
 }
 
 
 int main()
 {
 	Instrumentor::Get().BeginSession("Profile");
-	RunBenchmarks();
+	Benchmark::RunBenchmarks();
 	Instrumentor::Get().EndSession();
 
 

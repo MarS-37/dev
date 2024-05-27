@@ -1,57 +1,75 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                  How to make your STRINGS FASTER                 |
+//|     VISUAL BENCHMARKING (how to measure performance visually)    |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
 #include <string>
+#include <chrono>
+
+#include <cmath>
 
 
-static uint32_t s_AllocCount = 0;
-
-void* operator new(size_t size)
+class Timer
 {
-	s_AllocCount++;
-	std::cout << "Allocating " << size << " bytes\n";
-	return malloc(size);
+public:
+	Timer(const char* name)
+		: m_Name(name), m_Stopped(false)
+	{
+		m_StartTimepoint = std::chrono::high_resolution_clock::now();
+	}
+
+	void Stop()
+	{
+		auto endTimepoint = std::chrono::high_resolution_clock::now();
+
+		long long start = std::chrono::time_point_cast<std::chrono::milliseconds>(m_StartTimepoint).time_since_epoch().count();
+		long long end = std::chrono::time_point_cast<std::chrono::milliseconds>(endTimepoint).time_since_epoch().count();
+
+		std::cout << m_Name << ": " << (end - start) << "ms\n";
+
+		m_Stopped = true;
+	}
+
+	~Timer()
+	{
+		if (!m_Stopped)
+			Stop();
+	}
+
+private:
+	const char* m_Name;
+	std::chrono::time_point<std::chrono::steady_clock> m_StartTimepoint;
+	bool m_Stopped;
+};
+
+
+void Function1()
+{
+	Timer timer("Function1");
+
+	for (int i = 0; i < 1000; ++i) {
+		std::cout << "Hello World # " << i << std::endl;
+	}
 }
 
-#define STRING_VIEW 1
-#if STRING_VIEW
-void PrintName(std::string_view name)
+
+void Function2()
 {
-	std::cout << name << std::endl;
+	Timer timer("Function2");
+
+	for (int i = 0; i < 1000; ++i) {
+		std::cout << "Hello World # " << sqrt(i) << std::endl;
+	}
 }
 
-#else
-void PrintName(const std::string& name)
-{
-	std::cout << name << std::endl;
-}
-#endif
 
 int main()
 {
-	std::string name = "Yan Chernikov";
-
-
-#if STRING_VIEW
-	std::string_view firstName(name.c_str(), 3);
-	std::string_view lastName(name.c_str() + 4, 9);
-#else
-	std::string firstName = name.substr(0, 3);
-	std::string lastName = name.substr(4, 9);
-#endif
-
-
-	PrintName("Cherno");
-	PrintName(firstName);
-	PrintName(lastName);
-
-
-	std::cout << s_AllocCount << " allocations " << std::endl;
+	Function1();
+	Function2();
 
 
 	std::cin.get();

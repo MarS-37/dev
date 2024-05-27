@@ -1,1 +1,1 @@
-{"otherData": {},"traceEvents":[{"cat":"function","dur":303,"name":"Function1","ph":"X","pid":0,"tid":0,"ts":1006997778},{"cat":"function","dur":721,"name":"Function2","ph":"X","pid":0,"tid":0,"ts":1006998081}]}
+{"otherData": {},"traceEvents":[{"cat":"function","dur":326037,"name":"Function1","ph":"X","pid":0,"tid":0,"ts":1007388301521},{"cat":"function","dur":712845,"name":"Function2","ph":"X","pid":0,"tid":0,"ts":1007388627604}]}

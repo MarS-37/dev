@@ -153,6 +153,17 @@ void Function2()
 }
 
 
+void RunBenchmarks()
+{
+	InstrumentationTimer timer("RunBenchmarks");
+
+
+	std::cout << "RunBenchmarks...\n";
+	Function1();
+	Function2();
+}
+
+
 int main()
 {
 	Instrumentor::Get().BeginSession("Profile");

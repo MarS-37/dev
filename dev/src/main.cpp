@@ -8,36 +8,33 @@
 #include <iostream>
 
 
-class Singleton
+class Random
 {
 public:
-	Singleton(const Singleton&) = delete;
+	Random(const Random&) = delete;
 
-	static Singleton& Get()
+	static Random& Get()
 	{
 		return s_Instance;
 	}
 
-	void Function() {}
+	float  Float() { return m_RandomGenerator; }
 
 private:
-	Singleton() {}
+	Random() {}
 
-	float m_Member = 0.0f;
+	float m_RandomGenerator = 0.5f;
 
-	static Singleton s_Instance;
+	static Random s_Instance;
 };
 
 
-Singleton Singleton::s_Instance;
+Random Random::s_Instance;
 
 
 int main()
 {
-	auto& instance = Singleton::Get(); // or Singleton& instance = ...
-
-
-	instance.Function();
+	float number = Random::Get().Float();
 
 
 	std::cin.get();

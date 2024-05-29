@@ -15,7 +15,9 @@ public:
 
 	static Random& Get()
 	{
-		return s_Instance;
+		static Random instance;
+
+		return instance;
 	}
 
 	static float Float() { return Get().IFloat(); }
@@ -26,17 +28,14 @@ private:
 	Random() {}
 
 	float m_RandomGenerator = 0.5f;
-
-	static Random s_Instance;
 };
-
-
-Random Random::s_Instance;
 
 
 int main()
 {
 	float number = Random::Float();
+
+	std::cout << number << std::endl;
 
 
 	std::cin.get();

@@ -31,9 +31,17 @@ private:
 };
 
 
+namespace RandomClass
+{
+	static float s_RandomGenerator = 0.5f;
+
+	static float Float() { return s_RandomGenerator; }
+}
+
+
 int main()
 {
-	float number = Random::Float();
+	float number = RandomClass::Float();
 
 	std::cout << number << std::endl;
 

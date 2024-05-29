@@ -1,49 +1,25 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                            SINGLETONS                            |
+//|                     Small String Optimization                    |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
+#include <string>
 
 
-class Random
+void* operator new(size_t size)
 {
-public:
-	Random(const Random&) = delete;
+	std::cout << "Allocating " << size << " bytes\n";
 
-	static Random& Get()
-	{
-		static Random instance;
-
-		return instance;
-	}
-
-	static float Float() { return Get().IFloat(); }
-
-private:
-	float  IFloat() { return m_RandomGenerator; }
-	
-	Random() {}
-
-	float m_RandomGenerator = 0.5f;
-};
-
-
-namespace RandomClass
-{
-	static float s_RandomGenerator = 0.5f;
-
-	static float Float() { return s_RandomGenerator; }
+	return malloc(size);
 }
 
 
 int main()
 {
-	float number = RandomClass::Float();
-
-	std::cout << number << std::endl;
+	std::string name = "Cherno";
 
 
 	std::cin.get();

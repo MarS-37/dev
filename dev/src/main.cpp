@@ -9,7 +9,7 @@
 #include <memory>
 
 
-void PrintName(std::string& name)
+void PrintName(const std::string& name)
 {
 	std::cout << name << std::endl;
 }

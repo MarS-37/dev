@@ -1,25 +1,32 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                     Small String Optimization                    |
+//|               Track MEMORY ALLOCATIONS the Easy Way              |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
 
 #include <iostream>
-#include <string>
 
 
 void* operator new(size_t size)
 {
-	std::cout << "Allocating " << size << " bytes\n";
+	std::cout << "Allocationg " << size << " bytes\n\n";
+
 
 	return malloc(size);
 }
 
 
+struct Object
+{
+	int x, y, z;
+};
+
+
 int main()
 {
-	std::string name = "Cherno";
+	Object* obj = new Object;
+
 
 
 	std::cin.get();

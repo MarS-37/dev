@@ -18,6 +18,12 @@ void* operator new(size_t size)
 }
 
 
+void operator delete(void* memory)
+{
+	free(memory);
+}
+
+
 struct Object
 {
 	int x, y, z;
@@ -26,9 +32,11 @@ struct Object
 
 int main()
 {
-	std::string string = "Cherno";
+	{
+		std::unique_ptr<Object> obj = std::make_unique<Object>();
+	}
 
-	std::unique_ptr<Object> obj = std::make_unique<Object>();
+	std::string string = "Cherno";
 
 	std::cin.get();
 }

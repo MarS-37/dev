@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                        lvalues and rvalues                       |
+//|                     Argument Evaluation Order                    |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -9,28 +9,16 @@
 #include <memory>
 
 
-void PrintName(const std::string& name)
+void printSum(int a, int b)
 {
-	std::cout << "[lvalue] " << name << std::endl;
-}
-
-
-void PrintName(std::string&& name)
-{
-	std::cout << "[rvalue] " << name << std::endl;
+	std::cout << a << " + " << b << " = " << (a + b) << std::endl;
 }
 
 
 int main()
 {
-	std::string firstName = "Yan";
-	std::string lastName = "Chernikov";
-
-	std::string fullName = firstName + lastName;
-
-
-	PrintName(fullName);
-	PrintName(firstName + lastName);
+	int value = 0;
+	printSum(value++, value++);
 
 
 	std::cin.get();

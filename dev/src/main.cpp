@@ -9,9 +9,11 @@
 #include <memory>
 
 
-int GetValue()
+int& GetValue()
 {
-	return 10;
+	static int value = 10;
+
+	return value;
 }
 
 

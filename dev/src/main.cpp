@@ -9,7 +9,7 @@
 #include <memory>
 
 
-void SetValue(int value)
+void SetValue(int& value)
 {
 }
 

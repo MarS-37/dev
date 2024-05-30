@@ -9,18 +9,16 @@
 #include <memory>
 
 
-int& GetValue()
+void SetValue(int value)
 {
-	static int value = 10;
-
-	return value;
 }
 
 
 int main()
 {
-	int i = GetValue();
-	GetValue() = 5;
+	int i = 10;
+	SetValue(i);
+	SetValue(10);
 
 
 	std::cin.get();

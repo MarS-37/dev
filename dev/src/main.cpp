@@ -18,7 +18,7 @@ void printSum(int a, int b)
 int main()
 {
 	int value = 0;
-	printSum(value++, value++);
+	printSum(++value, ++value);
 
 
 	std::cin.get();

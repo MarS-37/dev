@@ -6,6 +6,7 @@
 
 
 #include <iostream>
+#include <memory>
 
 
 void* operator new(size_t size)
@@ -25,9 +26,9 @@ struct Object
 
 int main()
 {
-	Object* obj = new Object;
+	std::string string = "Cherno";
 
-
+	std::unique_ptr<Object> obj = std::make_unique<Object>();
 
 	std::cin.get();
 }

@@ -11,7 +11,13 @@
 
 void PrintName(const std::string& name)
 {
-	std::cout << name << std::endl;
+	std::cout << "[lvalue] " << name << std::endl;
+}
+
+
+void PrintName(std::string&& name)
+{
+	std::cout << "[rvalue] " << name << std::endl;
 }
 
 

@@ -9,17 +9,22 @@
 #include <memory>
 
 
-void SetValue(const int& value)
+void PrintName(std::string& name)
 {
+	std::cout << name << std::endl;
 }
 
 
 int main()
 {
-	int i = 10;
-	const int& b = 10;
-	SetValue(i);
-	SetValue(10);
+	std::string firstName = "Yan";
+	std::string lastName = "Chernikov";
+
+	std::string fullName = firstName + lastName;
+
+
+	PrintName(fullName);
+	PrintName(firstName + lastName);
 
 
 	std::cin.get();

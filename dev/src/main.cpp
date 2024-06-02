@@ -7,15 +7,16 @@
 
 #include <iostream>
 
+#include <array>
+
 
 int main()
 {
-	int array[5];
+	std::array<int, 10> collection;
 
+	for (auto i : collection) {
 
-	int size = 5;
-	int* heapArray = new int[size];
-	delete[] heapArray;
+	}
 
 
 	std::cin.get();

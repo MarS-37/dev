@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                                  |
-//|                           Move Semantics                         |
+//|            std::move and the Move Assignment Operator            |
 //|                                                                  |
 //+------------------------------------------------------------------+
 
@@ -79,6 +79,10 @@ int main()
 {
 	Entity entity("Cherno"); // or Entity entity(String("Cherno"));
 	entity.PrintName();
+
+
+	String string = "Hello";
+	String dest((String&&)string); // or dest = (String&&)string;	
 
 
 	std::cin.get();

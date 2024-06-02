@@ -29,6 +29,10 @@ int main()
 
 	static_assert(data.Size() < 10, "Size is too large");
 
+
+	Array<std::string, data.Size()> newArray;
+
+
 	for (int i = 0; i < data.Size(); ++i) {
 
 	}

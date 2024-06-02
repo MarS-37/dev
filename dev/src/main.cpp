@@ -35,6 +35,22 @@ public:
 		other.m_Size = 0;
 		other.m_Data = nullptr;
 	}
+	String& operator=(String&& other) noexcept
+	{
+		printf("Moved!\n");
+
+		if (this != &other) {
+			delete[] m_Data;
+			m_Size = other.m_Size;
+			m_Data = other.m_Data;
+
+			other.m_Size = 0;
+			other.m_Data = nullptr;
+		}
+
+
+		return *this;
+	}
 	~String()
 	{
 		printf("Destroyed!\n");
@@ -77,12 +93,24 @@ private:
 
 int main()
 {
-	Entity entity("Cherno"); // or Entity entity(String("Cherno"));
-	entity.PrintName();
+	//Entity entity("Cherno"); // or Entity entity(String("Cherno"));
+	//entity.PrintName();
 
 
-	String string = "Hello";
-	String dest((String&&)string); // or dest = (String&&)string;	
+	String apple = "Apple: ";
+	String dest;
+
+	std::cout << "Apple: ";
+	apple.Print();
+	std::cout << "Dest: ";
+	dest.Print();
+
+	dest = std::move(apple); // or dest(std::move(string)); or dest((String&&)string); or dest = (String&&)string;
+
+	std::cout << "Apple: ";
+	apple.Print();
+	std::cout << "Dest: ";
+	dest.Print();
 
 
 	std::cin.get();

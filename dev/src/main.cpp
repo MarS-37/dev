@@ -10,7 +10,7 @@
 #include <array>
 
 
-template <size_t S>
+template <typename T, size_t S>
 
 class Array
 {
@@ -24,7 +24,7 @@ private:
 int main()
 {
 	constexpr int size = 5;
-	Array<size> data;
+	Array<int, size> data;
 
 
 	std::cin.get();

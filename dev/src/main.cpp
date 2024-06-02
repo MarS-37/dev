@@ -14,8 +14,8 @@ int main()
 {
 	std::array<int, 10> collection;
 
-	for (auto i : collection) {
-
+	for (int i = 0; i < collection.size(); i++) {
+		collection[i];
 	}
 
 

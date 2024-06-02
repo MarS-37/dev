@@ -10,13 +10,21 @@
 #include <array>
 
 
+template <size_t S>
+
+class Array
+{
+public:
+
+private:
+	int m_Data[S];
+};
+
+
 int main()
 {
-	std::array<int, 10> collection;
-
-	for (int i = 0; i < collection.size(); i++) {
-		collection[i];
-	}
+	constexpr int size = 5;
+	Array<size> data;
 
 
 	std::cin.get();

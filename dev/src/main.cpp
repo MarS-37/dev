@@ -17,15 +17,11 @@ class Array
 public:
 	constexpr int Size() const { return S; }
 
-	T& operator[](size_t index) 
-	{ 
-		if (!(index < S)) {
-			__debugbrek();
-		}
-
-		return m_Data[index]; 
-	}
+	T& operator[](size_t index) { return m_Data[index]; }
 	const T& operator[](int index) const { return m_Data[index]; }
+
+	T* Data() { return m_Data; }
+	const T* Data() const { return m_Data; }
 private:
 	T m_Data[S];
 };
@@ -36,12 +32,12 @@ int main()
 	int size = 5;
 	Array<int, 5> data;
 	
-	const auto& arrayReference = data;
+	
+	memset(data.Data(), 0, data.Size() * sizeof(int));
 
-	for (int i = 0; i < data.Size(); ++i) {
+
+	for (size_t i = 0; i < data.Size(); ++i) {
 		data[i] = 2;
-
-		std::cout << arrayReference[i] << std::endl;
 	}
 
 

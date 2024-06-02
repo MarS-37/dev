@@ -17,7 +17,14 @@ class Array
 public:
 	constexpr int Size() const { return S; }
 
-	T& operator[](int index) { return m_Data[index]; }
+	T& operator[](size_t index) 
+	{ 
+		if (!(index < S)) {
+			__debugbrek();
+		}
+
+		return m_Data[index]; 
+	}
 	const T& operator[](int index) const { return m_Data[index]; }
 private:
 	T m_Data[S];

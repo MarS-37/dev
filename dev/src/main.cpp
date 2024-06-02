@@ -33,11 +33,11 @@ int main()
 	Array<int, 5> data;
 	
 	
-	memset(data.Data(), 0, data.Size() * sizeof(int));
+	//memset(data.Data(), 0, data.Size() * sizeof(int));
 
 
 	for (size_t i = 0; i < data.Size(); ++i) {
-		data[i] = 2;
+		std::cout << data[i] << std::endl;
 	}
 
 

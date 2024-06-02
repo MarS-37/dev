@@ -15,10 +15,10 @@ template <typename T, size_t S>
 class Array
 {
 public:
-	constexpr int Size() const { return S; }
+	constexpr size_t Size() const { return S; }
 
 	T& operator[](size_t index) { return m_Data[index]; }
-	const T& operator[](int index) const { return m_Data[index]; }
+	const T& operator[](size_t index) const { return m_Data[index]; }
 
 	T* Data() { return m_Data; }
 	const T* Data() const { return m_Data; }
@@ -33,7 +33,10 @@ int main()
 	Array<int, 5> data;
 	
 	
-	memset(data.Data(), 0, data.Size() * sizeof(int));
+	memset(&data[0], 0, data.Size() * sizeof(int));
+
+	data[1] = 5;
+	data[4] = 8;
 
 
 	for (size_t i = 0; i < data.Size(); ++i) {

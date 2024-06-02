@@ -17,7 +17,7 @@ class Array
 public:
 	constexpr int Size() const { return S; }
 
-	T operator[](int index) { return m_Data[index]; }
+	T& operator[](int index) { return m_Data[index]; }
 private:
 	T m_Data[S];
 };
@@ -29,6 +29,8 @@ int main()
 	Array<int, 5> data;
 	
 	for (int i = 0; i < data.Size(); ++i) {
+		data[i] = 2;
+
 		std::cout << data[i] << std::endl;
 	}
 

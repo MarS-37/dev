@@ -29,14 +29,10 @@ private:
 
 int main()
 {
-	int size = 5;
-	Array<int, 5> data;
-	
-	
-	memset(&data[0], 0, data.Size() * sizeof(int));
+	Array<std::string, 2> data;
 
-	data[1] = 5;
-	data[4] = 8;
+	data[0] = "Cherno";
+	data[1] = "C++";
 
 
 	for (size_t i = 0; i < data.Size(); ++i) {

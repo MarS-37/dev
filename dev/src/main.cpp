@@ -50,7 +50,60 @@ int main()
 	for (const auto& pair : map_second) {
 		std::cout << "\nkey: " << pair.first << ", value: " << pair.second;
 	}
-		
+
+
+	std::cout << "\n\n==========================\n\n";
+
+
+	// back_inserter
+	std::map<std::string, int> map_pair = {
+		{"one", 1},
+		{"two", 2},
+		{"three", 3}
+	};
+
+	std::vector<std::pair<std::string, int>> vec_pair = { {"four", 4} };
+
+	std::copy(map_pair.begin(), map_pair.end(), std::back_inserter(vec_pair));
+
+	for (const auto& pair : vec_pair) {
+		std::cout << "\nkey: " << pair.first << ", value: " << pair.second;
+	}
+
+
+
+
+	// copy elements from map to vector
+	/*
+	std::map		(std::pair<const Key, T>)
+	std::vector		(std::pair<Key, T>)
+	*/
+
+	std::map<std::string, int> map_pair_2 = {
+		{"raz", 1},
+		{"dva", 2},
+		{"tre", 3}
+	};
+
+	std::vector<std::pair<std::string, int>> vec_pair_2 = { {"cetire", 4} };
+
+	std::transform(map_pair_2.begin(), map_pair_2.end(), std::back_inserter(vec_pair_2),
+		[](const std::pair<const std::string, int>& p) {
+			return std::make_pair(p.first, p.second);
+		});
+
+	/*
+	This code uses `std::transform` with a lambda function to explicitly convert 
+	`std::pair<const std::string, int>` from `std::map` to 
+	`std::pair<std::string, int>` for `std::vector`. 
+	After that, all elements, including the originally added pair {“four”, 4}, 
+	will be correctly output.
+	*/
+
+	for (const auto& pair : vec_pair_2) {
+		std::cout << "\nkey: " << pair.first << ", value: " << pair.second;
+	}
+
 
 	std::cin.get();
 }

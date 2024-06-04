@@ -105,5 +105,25 @@ int main()
 	}
 
 
+	std::cout << "\n\n==========================\n\n";
+
+
+	// front_inserter
+	std::set<int> set_t = {
+		10, 20, 30
+	};
+
+	/*
+	set_t.insert(10);
+	set_t.insert(20);
+	set_t.insert(30);
+	*/
+
+	std::list<int> digitals;
+
+	std::copy(set_t.begin(), set_t.end(), std::front_inserter(digitals));
+	std::copy(digitals.begin(), digitals.end(), std::ostream_iterator<int>(std::cout, "-"));
+
+
 	std::cin.get();
 }

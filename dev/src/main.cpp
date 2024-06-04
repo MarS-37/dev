@@ -125,5 +125,35 @@ int main()
 	std::copy(digitals.begin(), digitals.end(), std::ostream_iterator<int>(std::cout, "-"));
 
 
+	std::cout << "\n\n==========================\n\n";
+
+
+	// copying elements
+	/*
+	In the example below, we will only change the second cell of the answer vector, 
+	even though the v vector has three cells.
+	*/
+
+	std::vector<int> v;
+	std::vector<int> answer;
+
+	v.push_back(1);
+	v.push_back(2);
+	v.push_back(3);
+
+	answer.push_back(0);
+	answer.push_back(10);
+
+	std::copy(answer.begin(), answer.end(), std::ostream_iterator<int>(std::cout, "-"));
+	std::cout << std::endl;
+
+	std::vector<int>::iterator it = answer.begin();
+	++it;
+
+	std::copy(v.begin(), v.end(), it);	// changed the values
+
+	std::copy(answer.begin(), answer.end(), std::ostream_iterator<int>(std::cout, "-"));
+
+
 	std::cin.get();
 }
